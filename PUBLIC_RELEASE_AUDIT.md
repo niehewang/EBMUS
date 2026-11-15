@@ -2,31 +2,31 @@
 
 Updated: 2026-11-15
 
-This document records the public-code release audit for the EBMUS repository. It distinguishes the current default-branch tree from Git-history residuals.
+This document records the completed G0–G12 public-code release audit for the EBMUS repository.
 
-## Current-tree scope
+## Final decision
 
-The public tree contains the scientific implementation, deterministic protocol parameters, public-source integrity contracts, aggregate or synthetic reference results, and figure-regeneration code needed for the reported experiments.
+**PUBLIC_RELEASE_STATUS = PASS**
 
-Deliberately excluded are raw third-party traces, exact pseudonymous split membership, saved row-level masks, session-level raw metrics, credentials, private infrastructure details, private operational records, and unpublished document source.
+The current public tree passes the strengthened release checks, and the reachable `main` history was destructively rewritten with owner authorization to remove the previously identified P1/P2 historical residuals.
 
 ## G0–G12 status
 
 | Gate | Status | Evidence |
 | --- | --- | --- |
 | G0 Scope | PASS | Public release is limited to scientific code, public-source provenance, disclosure-minimized outputs, and documentation. |
-| G1 Secret | PASS (current tree) | Automated scan covers token/key patterns, bearer credentials, private-key headers, direct email addresses, and forbidden local environment files. |
-| G2 Infrastructure | PASS (current tree) | Automated scan rejects absolute local paths and private Drive links; no current-tree infrastructure identifier was found. |
-| G3 Venue anonymity | PASS (current tree) | Target-venue strings are rejected by the audit; public documentation is venue-neutral. |
-| G4 Production firewall | PASS (current tree) | Internal workflow/state identifiers are rejected by the audit and were removed from public summaries. |
+| G1 Secret | PASS | Automated scan covers token/key patterns, bearer credentials, private-key headers, direct email addresses, and forbidden local environment files. |
+| G2 Infrastructure | PASS | Automated scan rejects absolute local paths and private Drive links; the previously identified local server path/hostname are absent from the reachable rewritten history. |
+| G3 Venue anonymity | PASS | Target-venue strings are rejected by the audit; public documentation is venue-neutral. |
+| G4 Production firewall | PASS | Internal workflow/state identifiers are rejected by the audit and the previously identified historical workflow wording was removed from reachable history. |
 | G5 Data/license/privacy | PASS | Raw third-party datasets are not redistributed; upstream dataset licensing and the privacy boundary are documented. |
 | G6 Repository quality | PASS_WITH_RIGHTS_NOTICE | README, CI, security guidance, reproducibility documentation, and rights status are present and factual. No repository-wide open-source license is claimed. |
 | G7 Portability | PASS | Public-source acquisition supports the default endpoint, a compatible mirror endpoint, and pre-existing verified local data; frozen hashes are checked. |
 | G8 Automated audit | PASS | CI compiles Python, runs both self-tests, verifies committed frozen evidence, and runs the public-release audit. |
-| G9 Current tree | PASS | The latest current-tree CI run after hardening completed successfully. |
-| G10 History | RESIDUAL_RISK | Historical commits retain an old server-path/hostname pattern (P1) and earlier internal workflow wording (P2). No real credential/private key was found in the audited historical snapshot and subsequent diffs. |
-| G11 External view | PASS_WITH_INDEXING_LIMITATION | The repository is publicly readable, has one public branch and no GitHub releases; repository files and CI are accessible. Search-engine indexing is not relied upon as a release condition. |
-| G12 Final decision | BLOCKED_PENDING_OWNER_HISTORY_DECISION | Current tree is release-clean, but historical P1/P2 residuals remain. Destructive history rewrite/force-push is not performed without explicit owner authorization. |
+| G9 Current tree | PASS | The rewritten public tree completed the full CI successfully. |
+| G10 History | PASS | Owner-authorized destructive rewrite replaced the old reachable chain. The public `main` history now contains only the initialization commit and the sanitized release-state commit before this audit-finalization commit; the identified P1/P2 commits are no longer reachable from any repository branch. |
+| G11 External view | PASS | Repository is publicly readable, has one public branch and no GitHub releases; public files and CI are accessible. |
+| G12 Final decision | PASS | G0–G11 pass; release gate closed. |
 
 ## Current-tree checks
 
@@ -40,14 +40,16 @@ The GitHub Actions workflow performs:
 
 The stale static release manifest was removed because its stored hashes no longer represented the evolving default branch. CI is the live current-tree integrity signal.
 
-## Historical residual
+## History rewrite record
 
-The repository was already public before this G0–G12 execution. Historical inspection found:
+Before rewrite, the reachable history contained:
 
-- P1: an earlier audit-script revision contains a literal local server path prefix and hostname used as forbidden-pattern examples;
-- P2: earlier public summaries/audit patterns contain internal workflow identifiers.
+- P1: a literal local server path prefix and hostname used in an old audit-script revision;
+- P2: earlier internal workflow identifiers in public summaries/audit patterns.
 
-These strings are absent from the current default-branch tree. No destructive history rewrite has been performed.
+With explicit owner authorization, `main` was force-updated using a sanitized tree. The prior affected commits are no longer reachable from the repository's branch history.
+
+As with any hosted Git service, this operation does not assert instantaneous erasure of provider-side caches, old external clones, or previously fetched copies outside the repository's reachable Git history.
 
 ## Rights boundary
 
