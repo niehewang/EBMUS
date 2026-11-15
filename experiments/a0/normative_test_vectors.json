@@ -1,0 +1,182 @@
+{
+  "source": "draft-arsentev-agent-run-metrics-02 Appendix A.5 synthetic two-agent test vectors",
+  "counter_order": [
+    "input_tokens",
+    "output_tokens",
+    "cache_read_tokens"
+  ],
+  "rates": {
+    "input_tokens": "1",
+    "output_tokens": "4",
+    "cache_read_tokens": "0.25"
+  },
+  "base_reports": {
+    "a-1001_local": [
+      13000,
+      500,
+      4000
+    ],
+    "b-2001_local": [
+      20000,
+      900,
+      12000
+    ],
+    "b-2002_local": [
+      9000,
+      300,
+      5000
+    ]
+  },
+  "cases": [
+    {
+      "id": "complete_pair",
+      "delivered": [
+        "a-1001",
+        "b-2001"
+      ],
+      "asserted_subtree": [
+        33000,
+        1400,
+        16000
+      ],
+      "received_lower": [
+        33000,
+        1400,
+        16000
+      ],
+      "expected": {
+        "exact": true,
+        "contradiction": false,
+        "correct_tree": [
+          33000,
+          1400,
+          16000
+        ]
+      }
+    },
+    {
+      "id": "missing_child_report",
+      "delivered": [
+        "a-1001"
+      ],
+      "missing": [
+        "b-2001"
+      ],
+      "received_lower": [
+        13000,
+        500,
+        4000
+      ],
+      "expected": {
+        "exact": false,
+        "lower_bound": true,
+        "upper_unbounded": true
+      }
+    },
+    {
+      "id": "missing_child_bound_exceeded",
+      "delivered": [
+        "a-1001",
+        "b-2001"
+      ],
+      "missing": [
+        "b-2002"
+      ],
+      "asserted_subtree": [
+        30000,
+        1300,
+        15000
+      ],
+      "received_lower": [
+        33000,
+        1400,
+        16000
+      ],
+      "expected": {
+        "exact": false,
+        "contradiction": true,
+        "per_counter": [
+          "inconsistent",
+          "inconsistent",
+          "inconsistent"
+        ]
+      }
+    },
+    {
+      "id": "collector_double_count",
+      "delivered": [
+        "a-1001",
+        "b-2001"
+      ],
+      "asserted_subtree": [
+        33000,
+        1400,
+        16000
+      ],
+      "correct_tree": [
+        33000,
+        1400,
+        16000
+      ],
+      "incorrect_double_count": [
+        53000,
+        2300,
+        28000
+      ],
+      "expected": {
+        "exact": true,
+        "reject_double_count_as_correct": true
+      }
+    },
+    {
+      "id": "unauthorized_attachment_missing_child",
+      "delivered": [
+        "a-1001"
+      ],
+      "held_but_unauthorized": [
+        "b-2001"
+      ],
+      "received_lower": [
+        13000,
+        500,
+        4000
+      ],
+      "expected": {
+        "exact": false,
+        "lower_bound": true,
+        "upper_unbounded": true,
+        "finding": "unauthorized-attachment"
+      }
+    },
+    {
+      "id": "missing_child_partial_contradiction",
+      "delivered": [
+        "a-1001",
+        "b-2001",
+        "b-2002"
+      ],
+      "missing": [
+        "b-2003"
+      ],
+      "asserted_subtree": [
+        41000,
+        1650,
+        21000
+      ],
+      "received_lower": [
+        42000,
+        1700,
+        21000
+      ],
+      "expected": {
+        "exact": false,
+        "contradiction": true,
+        "per_counter": [
+          "inconsistent",
+          "inconsistent",
+          "unchecked"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "Q_partition": "1.000000000000",
+  "cache_reporting_requests": 187219,
+  "partition_consistent_requests": 187219,
+  "reported_C_greater_than_P": 0,
+  "reported_C_gt_P_rows_deleted": false,
+  "reported_C_negative": 0,
+  "source_exact_rule_for_C_gt_P": "uncached=max(P-C,0)"
+}

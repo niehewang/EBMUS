@@ -1,0 +1,14 @@
+{
+  "base_axes": [
+    "missing_local",
+    "hidden_attribution",
+    "internal_summary_coverage"
+  ],
+  "cells": 243,
+  "instances_per_cell": 30,
+  "post_result_tuning": false,
+  "targeted_additions": [
+    "ambiguity_density",
+    "rate_heterogeneity"
+  ]
+}

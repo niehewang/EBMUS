@@ -1,0 +1,8 @@
+The quantitative-figure style is derived from the public SciencePlots project's
+"science" + "ieee" conventions (MIT License):
+https://github.com/garrettj403/SciencePlots
+
+The environment used for this manuscript is clean-room/offline, so the small
+matplotlib style sheet is vendored locally instead of depending on a pip install.
+The plotting code remains plain Matplotlib and all data-bearing geometry is read
+from the frozen CSV/JSON files under data/.

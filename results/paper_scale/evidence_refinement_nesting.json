@@ -1,0 +1,5 @@
+{
+  "rule": "L cannot decrease and U cannot increase from E0 through E4 beyond 1e-7",
+  "violation_count": 0,
+  "violations": []
+}

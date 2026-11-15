@@ -1,0 +1,176 @@
+{
+  "experiment_id": "a0_method_validation",
+  "candidate": "Evidence-Bounded Model-Usage Settlement (EBMUS)",
+  "resume_allowed": false,
+  "policy": {
+    "cpu_only": true,
+    "gpu": false,
+    "training": false,
+    "llm_inference": false,
+    "external_api": false,
+    "paid_service": false
+  },
+  "rates": {
+    "subtest_A_counter_rates": {
+      "input_tokens": "1",
+      "output_tokens": "4",
+      "cache_read_tokens": "0.25"
+    },
+    "subtests_B_to_E_rate_classes": [
+      1,
+      2,
+      4
+    ]
+  },
+  "implementation_semantics_frozen_before_run": {
+    "missing_local": "local amount is unknown in integer [0,cap]; node model-rate class remains known because hidden model attribution is a separate evidence state",
+    "hidden_model_attribution": "local amount is exact; rate class may be any of {1,2,4}",
+    "subtree_evidence": "exact additive local-usage subtree total",
+    "laminarflow": "exact specialized min/max-cost-flow solver exploiting laminar exact-sum regions; no heuristic approximation",
+    "evidencemilp": "binary ambiguity MILP solved exactly by branch-and-bound over 1-2 binary variables; each laminar integer subproblem is solved exactly by LaminarFlow",
+    "duplicate_distinct_group": "one observed usage record of amount a and rate r is certain; binary d=0 means the second observation is duplicate (one charge), d=1 means distinct attempt (two charges); contribution=a*r*(1+d)",
+    "correction_branch_group": "exactly one of two mutually exclusive replacement branches is effective; binary d selects branch 0 or branch 1 and its amount/rate charge",
+    "ambiguity_groups": "1 group if seeded Bernoulli<0.5 else 2; each group type selected seeded 50/50; all group parameters generated from the frozen RNG only"
+  },
+  "subtest_A": {
+    "normative_source": "draft-arsentev-agent-run-metrics-02 Appendix A.5",
+    "required_cases": [
+      "complete_pair",
+      "missing_child_report",
+      "missing_child_bound_exceeded",
+      "collector_double_count",
+      "unauthorized_attachment_missing_child",
+      "missing_child_partial_contradiction"
+    ]
+  },
+  "subtest_B": {
+    "seed": 20261106,
+    "instances": 4000,
+    "n_values": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "instances_per_n": 1000,
+    "q_values": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "rate_classes": [
+      1,
+      2,
+      4
+    ],
+    "quota_caps": [
+      3,
+      4,
+      5
+    ],
+    "status_probabilities": {
+      "exact": 0.65,
+      "missing": 0.2,
+      "hidden": 0.15
+    },
+    "internal_subtree_summary_probability": 0.5,
+    "root_subtree_total_always_included": true
+  },
+  "subtest_C": {
+    "seed": 20261107,
+    "instances": 1000,
+    "n_values": [
+      3,
+      4,
+      5
+    ],
+    "base_laminar_generator": "same rules as Subtest B except n sampled uniformly from {3,4,5}",
+    "ambiguity_group_count": [
+      1,
+      2
+    ],
+    "ambiguity_group_count_probability": {
+      "1": 0.5,
+      "2": 0.5
+    },
+    "ambiguity_types": [
+      "duplicate_distinct",
+      "correction_branch"
+    ],
+    "ambiguity_type_probability": {
+      "duplicate_distinct": 0.5,
+      "correction_branch": 0.5
+    },
+    "ambiguity_amount_values": [
+      1,
+      2,
+      3
+    ],
+    "ambiguity_rate_classes": [
+      1,
+      2,
+      4
+    ]
+  },
+  "subtest_D": {
+    "seed": 20261108,
+    "n": 64,
+    "missing_probabilities": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "hidden_attribution_probabilities": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "internal_summary_probabilities": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "instances_per_cell": 200,
+    "total_instances": 5400,
+    "quota_caps": [
+      8,
+      12,
+      16
+    ],
+    "q_rule": "cap chosen first; q sampled uniformly as integer in [0,cap]",
+    "rate_classes": [
+      1,
+      2,
+      4
+    ],
+    "root_subtree_total_always_included": true,
+    "primary_moderate_cell": {
+      "m": 0.1,
+      "a": 0.1,
+      "s": 0.5
+    }
+  },
+  "subtest_E": {
+    "seed": 20261109,
+    "n_values": [
+      100,
+      1000,
+      10000
+    ],
+    "instances_per_n": 50,
+    "m": 0.1,
+    "a": 0.1,
+    "s": 0.5,
+    "quota_caps": [
+      8,
+      12,
+      16
+    ],
+    "rate_classes": [
+      1,
+      2,
+      4
+    ]
+  }
+}

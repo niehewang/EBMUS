@@ -1,0 +1,75 @@
+{
+  "examples": [
+    {
+      "L": 65.102221,
+      "U": 65.12582800000001,
+      "Wrel": 0.0003625486242216927,
+      "affected_workflow_count": 5994,
+      "lower_witness_decomposition": {
+        "exact_known_cost": 65.09144800000001,
+        "missing_cache_partition_lower_cost": 0.010773
+      },
+      "max_depth": 0,
+      "natural_null_count": 1,
+      "rank_index": 0,
+      "representative_level": "low",
+      "requests": 259,
+      "root_harness": "pi",
+      "session_count": 1,
+      "session_id_returned": false,
+      "upper_witness_decomposition": {
+        "exact_known_cost": 65.09144800000001,
+        "missing_cache_partition_upper_cost": 0.03438
+      },
+      "week": "2026-08-30_2026-09-05"
+    },
+    {
+      "L": 26.862091,
+      "U": 33.118972,
+      "Wrel": 0.20862854664646407,
+      "affected_workflow_count": 5994,
+      "lower_witness_decomposition": {
+        "exact_known_cost": 26.049332,
+        "missing_cache_partition_lower_cost": 0.812759
+      },
+      "max_depth": 0,
+      "natural_null_count": 7,
+      "rank_index": 2996,
+      "representative_level": "median",
+      "requests": 225,
+      "root_harness": "opencode",
+      "session_count": 1,
+      "session_id_returned": false,
+      "upper_witness_decomposition": {
+        "exact_known_cost": 26.049332,
+        "missing_cache_partition_upper_cost": 7.069640000000001
+      },
+      "week": "2026-08-16_2026-08-22"
+    },
+    {
+      "L": 2.13493,
+      "U": 21.0685,
+      "Wrel": 1.6319630330515789,
+      "affected_workflow_count": 5994,
+      "lower_witness_decomposition": {
+        "exact_known_cost": 0.0,
+        "missing_cache_partition_lower_cost": 2.13493
+      },
+      "max_depth": 0,
+      "natural_null_count": 16,
+      "rank_index": 5993,
+      "representative_level": "high",
+      "requests": 16,
+      "root_harness": "hermes",
+      "session_count": 1,
+      "session_id_returned": false,
+      "upper_witness_decomposition": {
+        "exact_known_cost": 0.0,
+        "missing_cache_partition_upper_cost": 21.0685
+      },
+      "week": "2026-07-05_2026-07-11"
+    }
+  ],
+  "message_text_returned": false,
+  "selection": "low/median/high Wrel among all naturally affected top-level workflows; outcome examples requested by frozen protocol"
+}

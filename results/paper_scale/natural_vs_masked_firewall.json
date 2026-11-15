@@ -1,0 +1,7 @@
+{
+  "masked_benchmark_separate_script": "run_main_comparison.py",
+  "natural_analysis_script": "run_natural_freeinference.py",
+  "natural_source": "unaltered public FreeInference rows",
+  "synthetic_masking": false,
+  "uses_mask_files": false
+}

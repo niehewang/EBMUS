@@ -1,0 +1,11 @@
+{
+  "L_week_numerator": 57483149830,
+  "L_week_reference_cost": "57483.149830",
+  "S_complete_case_numerator": 56974727116,
+  "S_complete_case_reference_cost": "56974.727116",
+  "baseline_definition": "sum exact reference cost over naturally cache-reporting requests only",
+  "known_minimum_omitted_numerator": 508422714,
+  "known_minimum_omitted_reference_cost": "508.422714",
+  "lower_bound_gap": "0.008844726072",
+  "not_a_claim_of_financial_loss": true
+}

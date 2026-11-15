@@ -1,0 +1,81 @@
+{
+  "candidate": "Evidence-Bounded Model-Usage Settlement (EBMUS)",
+  "completed_utc": "2026-11-09T02:16:13Z",
+  "experiment_id": "EBMUS_A0_METHOD_VALIDATION",
+  "policy": {
+    "external_api": false,
+    "gpu": false,
+    "llm_inference": false,
+    "paid_service": false,
+    "training": false
+  },
+  "scientific_GO_MODIFY_NO_GO": "NOT_EVALUATED_BY_EXPERIMENT_SESSION",
+  "started_utc": "2026-11-09T02:16:06Z",
+  "subtest_A": {
+    "case_count": 6,
+    "mismatch_count": 0
+  },
+  "subtest_B": {
+    "instances": 4000,
+    "mismatch_count": 0
+  },
+  "subtest_C": {
+    "ambiguity_type_counts": {
+      "correction_branch": 744,
+      "duplicate_distinct": 745
+    },
+    "instances": 1000,
+    "mismatch_count": 0
+  },
+  "subtest_D": {
+    "instances": 5400,
+    "primary_moderate_cell": {
+      "finite_U_count": 200,
+      "instances": 200,
+      "mean_E_recv": 0.20582527984285812,
+      "median_W_rel_all": 0.13460287120257025,
+      "median_W_rel_nonfinal": 0.13460287120257025,
+      "naive_false_finality_count": 200,
+      "nonfinal_and_E_recv_ge_0_05_count": 199,
+      "nonfinal_and_E_recv_ge_0_05_fraction": 0.995,
+      "nonfinal_and_W_rel_ge_0_05_count": 187,
+      "nonfinal_and_W_rel_ge_0_05_fraction": 0.935,
+      "nonfinal_count": 200,
+      "nonfinal_fraction": 1.0,
+      "p95_W_rel_all": 0.26059979317476734,
+      "truth_containment_violations": 0
+    },
+    "truth_containment_violation_count": 0
+  },
+  "subtest_E": {
+    "by_n": {
+      "100": {
+        "failure_count": 0,
+        "instances": 50,
+        "max_lower_plus_upper_solve_seconds": 0.00040224287658929825,
+        "max_peak_rss_mb_process": 19.765625,
+        "median_lower_plus_upper_solve_seconds": 0.0003451644442975521,
+        "p95_lower_plus_upper_solve_seconds": 0.00037667620927095413,
+        "success_count": 50
+      },
+      "1000": {
+        "failure_count": 0,
+        "instances": 50,
+        "max_lower_plus_upper_solve_seconds": 0.0033769477158784866,
+        "max_peak_rss_mb_process": 19.765625,
+        "median_lower_plus_upper_solve_seconds": 0.003219480160623789,
+        "p95_lower_plus_upper_solve_seconds": 0.003362792544066906,
+        "success_count": 50
+      },
+      "10000": {
+        "failure_count": 0,
+        "instances": 50,
+        "max_lower_plus_upper_solve_seconds": 0.039436559192836285,
+        "max_peak_rss_mb_process": 20.29296875,
+        "median_lower_plus_upper_solve_seconds": 0.027471196837723255,
+        "p95_lower_plus_upper_solve_seconds": 0.03598854877054691,
+        "success_count": 50
+      }
+    }
+  }
+}

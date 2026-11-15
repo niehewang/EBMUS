@@ -1,0 +1,11 @@
+{
+  "all_requests": 190544,
+  "cache_reporting_requests": 187219,
+  "child_non_cache_reporting_fraction": "0.056756756757",
+  "child_non_cache_reporting_requests": 210,
+  "child_session_requests": 3700,
+  "non_cache_reporting_fraction": "0.017450037787",
+  "non_cache_reporting_requests": 3325,
+  "null_reason_inferred": false,
+  "synthetic_masking_or_withholding": false
+}

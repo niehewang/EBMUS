@@ -1,0 +1,6 @@
+{
+  "bruteforce_vs_evidence_mismatches": 0,
+  "lp_vs_laminar_mismatches": 0,
+  "milp_vs_evidence_mismatches": 0,
+  "numerical_tolerance": 1e-07
+}

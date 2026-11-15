@@ -1,20 +1,23 @@
 # EBMUS
 
+[![CI](https://github.com/niehewang/EBMUS/actions/workflows/ci.yml/badge.svg)](https://github.com/niehewang/EBMUS/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
+
 **Evidence-Bounded Model-Usage Settlement (EBMUS)** is research code for computing evidence-consistent settlement bounds and finality under incomplete AI/agent usage-accounting evidence.
 
-The repository contains the frozen scientific implementation used for the paper experiments: the LaminarFlow structured exact solver, the scoped discrete-ambiguity solver, controlled exactness/scalability studies, real-trace masking comparisons, evidence-refinement and sensitivity experiments, natural FreeInference analysis, and quantitative figure regeneration.
+The repository contains the frozen scientific implementation used for the reported experiments: the LaminarFlow structured exact solver, the scoped discrete-ambiguity solver, controlled exactness/scalability studies, real-trace masking comparisons, evidence-refinement and sensitivity experiments, natural FreeInference analysis, and quantitative figure regeneration.
 
 ## What is included
 
 - `src/ebmus/core.py` — frozen EBMUS core implementation used by the method-validation study.
 - `experiments/a0/` — exactness, truth-containment, non-degeneracy, and scalability validation.
 - `experiments/paper_scale/` — controlled real-trace comparison, generic-vs-structured solver benchmark, evidence refinement, sensitivity, and natural-trace analysis.
-- `results/` — **aggregate or synthetic** reference results used by the manuscript.
-- `figures/` — exact-data quantitative figure generation code and the vendored IEEE/science Matplotlib style.
+- `results/` — **aggregate or synthetic** reference results used in the reported evaluation.
+- `figures/` — exact-data quantitative figure generation code and a vendored publication-style Matplotlib configuration.
 
 ## What is intentionally not included
 
-To minimize unnecessary disclosure, this public release does **not** contain raw third-party trace files, session-level raw metrics, exact session-ID split lists, saved mask arrays, machine hostnames, absolute server paths, API credentials, internal project-management documents, or manuscript source. These artifacts are either third-party data or operational records and are not needed in the repository.
+To minimize unnecessary disclosure, this public release does **not** contain raw third-party trace files, session-level raw metrics, exact session-ID split lists, saved mask arrays, machine hostnames, absolute server paths, API credentials, private operational records, or unpublished document source.
 
 The controlled splits and masks are deterministic and are regenerated from the frozen public sources using the committed seeds, so their omission does not change the scientific protocol.
 
@@ -46,6 +49,8 @@ PYTHONPATH=src python experiments/a0/self_test_frozen.py
 cd experiments/paper_scale
 python scripts/self_test.py
 ```
+
+The CI workflow also compiles the Python sources, runs the compact frozen-evidence verifier, and executes the public-release audit.
 
 ## Reproduce the synthetic method validation
 
@@ -86,7 +91,7 @@ python run_all.py
 
 Every downloaded FreeInference file is checked against the committed frozen SHA256 values before analysis. TraceLab is checked against the frozen revision/file SHA256. After acquisition, the formal scientific-analysis scripts run offline.
 
-> The public datasets are not redistributed here. Please follow each upstream dataset's license and terms.
+> The public datasets are not redistributed here. Both frozen source datasets are published under CC BY 4.0; see `docs/DATASETS.md` for source and attribution details.
 
 ## Regenerate quantitative figures
 
@@ -104,6 +109,11 @@ The `1:10:50` cached-input : fresh-input : output vector used in the controlled 
 
 The scoped discrete solver is validated only for the explicit duplicate/distinct execution-attempt and mutually-exclusive correction ambiguity classes implemented in the code; it should not be read as a claim of arbitrary MILP tractability.
 
-## Reproducibility and privacy
+## Reproducibility, privacy, and release status
 
-See `docs/REPRODUCIBILITY.md` and `docs/PRIVACY_AND_RELEASE.md`.
+- Reproducibility notes: `docs/REPRODUCIBILITY.md`
+- Dataset provenance and licenses: `docs/DATASETS.md`
+- Privacy/minimization boundary: `docs/PRIVACY_AND_RELEASE.md`
+- Current-tree release checks: `PUBLIC_RELEASE_AUDIT.md`
+- Security reporting: `SECURITY.md`
+- Rights and licensing status: `RIGHTS_AND_LICENSES.md`

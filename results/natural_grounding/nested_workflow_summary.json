@@ -1,0 +1,18 @@
+{
+  "affected_nested_Wrel_distribution": {
+    "count": 48,
+    "max": "0.822753405838",
+    "median": "0.046965615133",
+    "p25": "0.021936194813",
+    "p75": "0.113784094000",
+    "p95": "0.577042193218"
+  },
+  "affected_nested_delegated_workflows": 48,
+  "affected_nested_fraction": "0.727272727273",
+  "all_affected_fraction": "0.514396456257",
+  "all_affected_workflows": 929,
+  "all_top_level_workflows": 1806,
+  "nested_delegated_workflows": 66,
+  "nested_tolerance_failure_fraction": "0.621212121212",
+  "nested_workflows_failing_one_percent_tolerance_finality": 41
+}

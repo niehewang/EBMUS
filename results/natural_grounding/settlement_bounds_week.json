@@ -1,0 +1,12 @@
+{
+  "L_week_numerator": 57483149830,
+  "L_week_reference_cost": "57483.149830",
+  "U_week_numerator": 61337053906,
+  "U_week_reference_cost": "61337.053906",
+  "W_week_numerator": 3853904076,
+  "W_week_reference_cost": "3853.904076",
+  "Wrel_week": "0.064869507959",
+  "exact_finality": false,
+  "one_percent_tolerance_finality": false,
+  "tokens_per_million": 1000000
+}

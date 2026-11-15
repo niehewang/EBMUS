@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "case_id": "complete_pair",
+      "contradiction": false,
+      "exact": true,
+      "lower_q4": 170400,
+      "upper_q4": 170400
+    },
+    {
+      "case_id": "missing_child_report",
+      "contradiction": false,
+      "exact": false,
+      "lower_q4": 64000,
+      "upper_unbounded": true
+    },
+    {
+      "case_id": "missing_child_bound_exceeded",
+      "contradiction": true,
+      "exact": false,
+      "lower_q4": 170400,
+      "per_counter": [
+        "inconsistent",
+        "inconsistent",
+        "inconsistent"
+      ],
+      "upper_unbounded": true
+    },
+    {
+      "case_id": "collector_double_count",
+      "contradiction": false,
+      "correct_q4": 170400,
+      "double_count_q4": 276800,
+      "double_count_rejected": true,
+      "exact": true
+    },
+    {
+      "case_id": "unauthorized_attachment_missing_child",
+      "contradiction": false,
+      "exact": false,
+      "finding": "unauthorized-attachment",
+      "lower_q4": 64000,
+      "upper_unbounded": true
+    },
+    {
+      "case_id": "missing_child_partial_contradiction",
+      "contradiction": true,
+      "exact": false,
+      "lower_q4": 216200,
+      "per_counter": [
+        "inconsistent",
+        "inconsistent",
+        "unchecked"
+      ],
+      "upper_unbounded": true
+    }
+  ],
+  "mismatches": []
+}

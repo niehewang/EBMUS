@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local datasets and derived session-level artifacts
+experiments/paper_scale/data/
+experiments/paper_scale/cache/
+experiments/paper_scale/runs/
+experiments/paper_scale/masks/
+experiments/paper_scale/raw_metrics/
+experiments/paper_scale/data_contracts/splits_*.json
+experiments/paper_scale/mechanical_checks/freeinference_workflow_mechanical.parquet
+experiments/paper_scale/paper_facing/
+
+# Local A0 reruns
+experiments/a0/run/
+experiments/a0/results/
+
+# Generated figures
+figures/generated/
+
+# Secrets / local environment
+.env
+.env.*
+*.key
+*.pem
+*.p12
+.DS_Store

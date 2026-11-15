@@ -1,0 +1,195 @@
+{
+  "experiment_id": "paper_scale_comparative_evaluation",
+  "resource_policy": {
+    "cpu_only": true,
+    "gpu": false,
+    "llm_inference": false,
+    "external_model_api": false,
+    "paid_api": false,
+    "formal_analysis_offline": true
+  },
+  "reference_contract": {
+    "cached": 1.0,
+    "fresh_uncached": 10.0,
+    "output": 50.0,
+    "per_tokens": 1000000
+  },
+  "freeinference": {
+    "dataset": "harvardMadsys/freeinference_agentic_trace",
+    "commit": "2b795dbf5eac490a7c081906fdce6cc7a184b7ef",
+    "weeks": [
+      "2026-05-17_2026-05-23",
+      "2026-05-24_2026-05-30",
+      "2026-05-31_2026-06-06",
+      "2026-06-07_2026-06-13",
+      "2026-06-14_2026-06-20",
+      "2026-06-21_2026-06-27",
+      "2026-06-28_2026-07-04",
+      "2026-07-05_2026-07-11",
+      "2026-07-12_2026-07-18",
+      "2026-07-19_2026-07-25",
+      "2026-07-26_2026-08-01",
+      "2026-08-02_2026-08-08",
+      "2026-08-09_2026-08-15",
+      "2026-08-16_2026-08-22",
+      "2026-08-23_2026-08-29",
+      "2026-08-30_2026-09-05"
+    ],
+    "min_eligible_requests_per_session": 10
+  },
+  "syfi": {
+    "dataset": "UW-SyFI/TraceLab",
+    "version_path": "data/v0.0.2/rounds/train.parquet",
+    "expected_sha256": "cb8c2b1d23307090c8057c747f955663bacde16a49f84a3c5071a1e2e96a7ab8",
+    "expected_rows": 665453,
+    "natural_missing_claim_authorized": false,
+    "revision": "7256bbf77e76d5cb83f4ddbd5ad31d8faee9dc7a"
+  },
+  "split": {
+    "seed": 20261109,
+    "train": 0.6,
+    "validation": 0.2,
+    "test": 0.2,
+    "unit": "session_or_workflow_group"
+  },
+  "masking": {
+    "mechanisms": [
+      "MCAR",
+      "BLOCK",
+      "CONTEXT_BIASED"
+    ],
+    "q": [
+      0.1,
+      0.2,
+      0.3
+    ],
+    "seeds": [
+      23,
+      47,
+      71,
+      101,
+      131
+    ]
+  },
+  "predictors": {
+    "categorical_hash_dims": 12,
+    "knn_k_grid": [
+      3,
+      5,
+      10,
+      20
+    ],
+    "rf_grid": [
+      {
+        "n_estimators": 80,
+        "max_depth": 16,
+        "min_samples_leaf": 2,
+        "max_features": 0.8
+      },
+      {
+        "n_estimators": 120,
+        "max_depth": null,
+        "min_samples_leaf": 5,
+        "max_features": 0.8
+      }
+    ],
+    "multiple_imputation_draws": 20,
+    "multiple_imputation_seeds": [
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009,
+      1010,
+      1011,
+      1012,
+      1013,
+      1014,
+      1015,
+      1016,
+      1017,
+      1018,
+      1019,
+      1020
+    ]
+  },
+  "solver": {
+    "sizes": [
+      10,
+      30,
+      100,
+      300,
+      1000,
+      3000,
+      10000
+    ],
+    "repetitions": 50,
+    "small_exact_sizes": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "small_exact_repetitions": 100,
+    "timeout_seconds": 60,
+    "numerical_tolerance": 1e-07
+  },
+  "evidence_refinement": {
+    "sizes": [
+      30,
+      100,
+      300
+    ],
+    "rate_heterogeneity": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "seeds": [
+      23,
+      47,
+      71
+    ]
+  },
+  "sensitivity": {
+    "missing_local": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "hidden_attribution": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "internal_summary_coverage": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "ambiguity_density": [
+      "none",
+      "low",
+      "medium"
+    ],
+    "rate_heterogeneity": [
+      "low",
+      "medium",
+      "high"
+    ],
+    "instances_per_cell": 30,
+    "n": 64
+  },
+  "natural_group_support": {
+    "min_requests": 500,
+    "min_workflows": 10
+  },
+  "bootstrap": {
+    "seed": 20261109,
+    "replicates": 1000
+  }
+}

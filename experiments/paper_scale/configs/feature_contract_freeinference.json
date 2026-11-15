@@ -1,0 +1,28 @@
+{
+  "categorical_encoding": "deterministic signed SHA256 feature hashing, 12 dimensions; target-independent",
+  "categorical_predictors": [
+    "model",
+    "provider",
+    "harness",
+    "step_trigger"
+  ],
+  "dataset": "FreeInference",
+  "forbidden": [
+    "cache_read_tokens",
+    "fresh_input_tokens",
+    "uncached_input_tokens",
+    "future messages/results",
+    "any target-derived field"
+  ],
+  "numeric_predictors": [
+    "input_tokens",
+    "output_tokens",
+    "step_index",
+    "n_messages",
+    "session_relative_position"
+  ],
+  "numeric_transform": "log1p for token/message counts; raw step_index/session_relative_position; train-only standardization",
+  "split": "session/workflow-group split seed 20261109; no request-level split",
+  "target": "cache_read_tokens",
+  "target_clamp": "all predictive cache estimates are clipped to [0,input_tokens] before rating"
+}

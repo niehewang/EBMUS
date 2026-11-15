@@ -1,0 +1,146 @@
+{
+  "M10_per_harness_file": "per_harness_settlement.csv",
+  "M1_Q_partition": "1.000000000000",
+  "M2_non_cache_reporting_overall": {
+    "count": 3325,
+    "fraction": "0.017450037787"
+  },
+  "M3_non_cache_reporting_child": {
+    "count": 210,
+    "fraction": "0.056756756757"
+  },
+  "M4_week": {
+    "L_week_numerator": 57483149830,
+    "L_week_reference_cost": "57483.149830",
+    "U_week_numerator": 61337053906,
+    "U_week_reference_cost": "61337.053906",
+    "W_week_numerator": 3853904076,
+    "W_week_reference_cost": "3853.904076",
+    "Wrel_week": "0.064869507959",
+    "exact_finality": false,
+    "one_percent_tolerance_finality": false,
+    "tokens_per_million": 1000000
+  },
+  "M5_complete_case": {
+    "L_week_numerator": 57483149830,
+    "L_week_reference_cost": "57483.149830",
+    "S_complete_case_numerator": 56974727116,
+    "S_complete_case_reference_cost": "56974.727116",
+    "baseline_definition": "sum exact reference cost over naturally cache-reporting requests only",
+    "known_minimum_omitted_numerator": 508422714,
+    "known_minimum_omitted_reference_cost": "508.422714",
+    "lower_bound_gap": "0.008844726072",
+    "not_a_claim_of_financial_loss": true
+  },
+  "M6_affected_top_level": {
+    "count": 929,
+    "fraction": "0.514396456257"
+  },
+  "M7_affected_nested": {
+    "count": 48,
+    "fraction": "0.727272727273"
+  },
+  "M8_affected_nested_Wrel": {
+    "count": 48,
+    "max": "0.822753405838",
+    "median": "0.046965615133",
+    "p25": "0.021936194813",
+    "p75": "0.113784094000",
+    "p95": "0.577042193218"
+  },
+  "M9_nested_tolerance_failures": {
+    "count": 41,
+    "fraction": "0.621212121212"
+  },
+  "experiment_id": "EBMUS_NATURAL_EVIDENCE_SETTLEMENT_GROUNDING",
+  "numeric_validity": {
+    "all_request_intervals_finite": true,
+    "invalid_request_intervals": 0,
+    "negative_completion_tokens_used": 0,
+    "negative_prompt_tokens_used": 0,
+    "noninteger_completion_tokens": 0,
+    "noninteger_prompt_tokens": 0,
+    "noninteger_reported_cache_tokens": 0,
+    "week_L_le_U": true,
+    "workflow_intervals_all_finite_and_ordered": true
+  },
+  "outcome_based_filtering": false,
+  "reference_price_contract": {
+    "cached_input": 1,
+    "git_blob_sha": "67acaac64ce0f0e765696aab1c26c6189557d8fd",
+    "output": 50,
+    "tokens_per_million": 1000000,
+    "uncached_input": 10
+  },
+  "scientific_GO_MODIFY_NO_GO": "NOT_EVALUATED_BY_EXPERIMENT_EXECUTION",
+  "source_hash_check": {
+    "all_frozen_sha256_match": true,
+    "code_schema_commit": "2b795dbf5eac490a7c081906fdce6cc7a184b7ef",
+    "files": {
+      "manifest.json": {
+        "actual_sha256": "a0db5cf1a9d50315898a54e6c540bc0349ec18c1707883bc132f0b027ff8a554",
+        "bytes": 1641,
+        "expected_sha256": "a0db5cf1a9d50315898a54e6c540bc0349ec18c1707883bc132f0b027ff8a554",
+        "match": true,
+        "present": true
+      },
+      "processed/requests.parquet": {
+        "actual_sha256": "e8f4f987f00442348ac09b1d6dc8865cf3dde299944423d54402f620244d3a6a",
+        "bytes": 1817646481,
+        "expected_sha256": "e8f4f987f00442348ac09b1d6dc8865cf3dde299944423d54402f620244d3a6a",
+        "match": true,
+        "present": true
+      },
+      "processed/sessions.parquet": {
+        "actual_sha256": "d782ad98880f8024874ceae02e87053b6214e956e7b145a4abdbfa60d9db5871",
+        "bytes": 46146,
+        "expected_sha256": "d782ad98880f8024874ceae02e87053b6214e956e7b145a4abdbfa60d9db5871",
+        "match": true,
+        "present": true
+      },
+      "processed/tables.json": {
+        "actual_sha256": "69e7b18103d945af6d17f358fc13d18a3bb0ccabadb910ffdf6b5da07d4aa726",
+        "bytes": 596,
+        "expected_sha256": "69e7b18103d945af6d17f358fc13d18a3bb0ccabadb910ffdf6b5da07d4aa726",
+        "match": true,
+        "present": true
+      },
+      "processed/tool_calls.parquet": {
+        "actual_sha256": "ea4deb14fba800423428ee8204a2f2dd29854d5339d4be88896c0bc672f15a07",
+        "bytes": 3690034,
+        "expected_sha256": "ea4deb14fba800423428ee8204a2f2dd29854d5339d4be88896c0bc672f15a07",
+        "match": true,
+        "present": true
+      }
+    },
+    "format_version": 1,
+    "format_version_is_1": true,
+    "full_integrity_chain_pass": true,
+    "table_integrity": {
+      "requests.parquet": {
+        "actual_rows": 190544,
+        "bytes_matches_tables_json": true,
+        "recorded_rows": 190544,
+        "rows_matches_tables_json": true,
+        "sha256_matches_tables_json": true
+      },
+      "sessions.parquet": {
+        "actual_rows": 2047,
+        "bytes_matches_tables_json": true,
+        "recorded_rows": 2047,
+        "rows_matches_tables_json": true,
+        "sha256_matches_tables_json": true
+      },
+      "tool_calls.parquet": {
+        "actual_rows": 196975,
+        "bytes_matches_tables_json": true,
+        "recorded_rows": 196975,
+        "rows_matches_tables_json": true,
+        "sha256_matches_tables_json": true
+      }
+    },
+    "tables_manifest_chain_match": true,
+    "week": "2026-08-30_2026-09-05"
+  },
+  "synthetic_masking_or_withholding": false
+}

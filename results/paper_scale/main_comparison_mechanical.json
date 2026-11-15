@@ -1,0 +1,24 @@
+{
+  "all_methods_use_single_saved_mask_npz_per_dataset": true,
+  "datasets": [
+    "FreeInference",
+    "SyFI"
+  ],
+  "methods": [
+    "zero_fill",
+    "complete_case",
+    "train_mean",
+    "train_median",
+    "knn",
+    "chained_equations",
+    "random_forest_imputation",
+    "independent_bounds",
+    "EBMUS_evidence_bounds"
+  ],
+  "scientific_outcome": "NOT_ADJUDICATED",
+  "target_leakage_prohibited": true,
+  "truth_preservation_files": [
+    "truth_preservation_freeinference.json",
+    "truth_preservation_syfi.json"
+  ]
+}

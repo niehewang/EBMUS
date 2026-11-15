@@ -1,0 +1,14 @@
+{
+  "repository_file": "paper/metrics/prices.py",
+  "repository_commit": "2b795dbf5eac490a7c081906fdce6cc7a184b7ef",
+  "git_blob_sha": "67acaac64ce0f0e765696aab1c26c6189557d8fd",
+  "tokens_per_million": 1000000,
+  "cached_input": 1,
+  "uncached_input": 10,
+  "output": 50,
+  "claim_boundary": "FreeInference source-native reference modeled API-cost contract; not an actual invoice, royalty schedule, or universal market price.",
+  "request_semantics": {
+    "cache_reporting": "uncached=max(P-C,0); exact_numerator=1*C+10*uncached+50*O",
+    "non_cache_reporting": "lower_numerator=1*P+50*O; upper_numerator=10*P+50*O"
+  }
+}
